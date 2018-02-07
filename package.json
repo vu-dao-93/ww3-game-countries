@@ -1,0 +1,19 @@
+{
+  "name": "ww3-game-countries",
+  "version": "0.1.0",
+  "description": "Countries list for ww3 game",
+  "main": "index.js",
+  "author": "Vu Dao",
+  "license": "No license",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^4.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "fs-extra": "^4.0.2",
+    "mongodb": "^2.2.33",
+    "require-dir": "^0.3.2"
+  }
+}
