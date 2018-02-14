@@ -2,12 +2,23 @@
   "name": "ww3-game-countries",
   "version": "0.1.0",
   "description": "Countries list for ww3 game",
-  "main": "index.js",
+  "main": "app/server.js",
   "author": "Vu Dao",
   "license": "No license",
   "private": true,
+  "scripts": {
+    "start": "nodemon app/server.js --exec babel-node --presets es2015,stage-2",
+    "build": "babel app -d dist",
+    "serve": "node dist/index.js"
+  },
   "devDependencies": {
-    "eslint": "^4.11.0"
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.11.0",
+    "nodemon": "^1.14.12"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
