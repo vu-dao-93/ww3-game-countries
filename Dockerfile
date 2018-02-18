@@ -21,7 +21,4 @@ EXPOSE 8080
 RUN npm run build
 
 # Install `serve` to run the application.
-RUN npm install -g serve
-
-# Set the command to start the node server.
-CMD serve -s build
+CMD npm run serve
