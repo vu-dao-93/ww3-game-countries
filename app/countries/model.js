@@ -24,4 +24,20 @@ export const randomHq = model.randomHq = async () => {
   }
 };
 
+export const search = model.search = (keyword) => {
+  try {
+    const db = getDb();
+    const collection = db.collection('countries');
+    return collection.find({
+      "Name": {
+        $regex: keyword,
+        $options: 'i'
+      }
+    }).toArray();
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
 export default model;

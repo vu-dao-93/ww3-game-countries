@@ -2,6 +2,18 @@ import express from 'express';
 import countries from './model';
 const router = express.Router();
 
+router.get('/', async (req, res) => {
+  const query = req.query;
+  try {
+    if (query.q) {
+      res.send(await countries.search(query.q));
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(error.status).send(error.message);
+  }
+});
+
 router.get('/hqs', async (req, res) => {
   try {
     const hqs = await countries.getHqs();
