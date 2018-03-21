@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import express from 'express';
 import bodyParser from 'body-parser';
 import config from './config';
-import router from './countries/router';
+import CountriesConroller from './countries/router';
 import { init } from './db';
 
 const app = express();
@@ -23,12 +23,14 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(router);
+app.use('/country', CountriesConroller);
 
 const startServer = async () => {
   try {
     await init();
-    app.listen(config.express.port, config.express.ip);
+    app.listen(config.express.port, config.express.ip, () => {
+      console.log(`Listening to app at ${config.express.ip}:${config.express.port}`);
+    })
     return;
   } catch (error) {
     console.log(error);

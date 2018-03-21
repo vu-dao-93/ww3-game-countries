@@ -1,7 +1,7 @@
 const config = {};
 
 config.express = {
-  port: 8080,
+  port: 49160,
   ip: '0.0.0.0'
 };
 
