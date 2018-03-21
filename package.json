@@ -7,10 +7,9 @@
   "license": "No license",
   "private": true,
   "scripts": {
-    "start": "nodemon app/server.js --exec babel-node --presets env,stage-2",
+    "start": "nodemon app/server.js --exec babel-node --presets es2015,stage-2",
     "build": "babel app -d dist",
-    "serve": "node dist/server.js",
-    "update": "rollup updateCountries.js --o dist/updateCountries.js --f cjs && babel dist/updateCountries.js --out-file bundle.js && node bundle.js && rm bundle.js"
+    "serve": "node dist/server.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -19,8 +18,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
     "eslint": "^4.11.0",
-    "nodemon": "^1.14.12",
-    "rollup": "^0.56.2"
+    "nodemon": "^1.14.12"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
