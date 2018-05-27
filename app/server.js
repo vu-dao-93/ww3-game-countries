@@ -30,7 +30,7 @@ const startServer = async () => {
     await init();
     app.listen(config.express.port, config.express.ip, () => {
       console.log(`Listening to app at ${config.express.ip}:${config.express.port}`);
-    })
+    });
     return;
   } catch (error) {
     console.log(error);

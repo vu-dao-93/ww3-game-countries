@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon app/server.js --exec babel-node --presets env,stage-2",
+    "lint": "NODE_ENV=test eslint --config .eslintrc \"app/**/*.js\"",
     "build": "babel app -d dist",
     "serve": "node dist/server.js",
     "update": "rollup updateCountries.js --o dist/updateCountries.js --f cjs && babel dist/updateCountries.js --out-file bundle.js && node bundle.js && rm bundle.js"

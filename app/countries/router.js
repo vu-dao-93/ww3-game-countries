@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
   const params = req.query;
   console.log(params);
   try {
-    let { specials, ipp, pg, sort } = params;
+    let { ipp, pg, sort } = params;
     ipp = +ipp;
     pg = +pg;
     let query = {};
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
       }
       const tableKey = key.charAt(0).toUpperCase() + key.substr(1);
       query[tableKey] = params[key];
-    })
+    });
     const results = await countries.get({
       query,
       sort,
@@ -43,7 +43,7 @@ router.get('/search', async (req, res) => {
     query[element] = {
       $regex: keyword[index],
       $options: 'i'
-    }
+    };
   });
   try {
     res.json(await countries.search({
