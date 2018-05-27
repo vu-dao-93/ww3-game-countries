@@ -3,7 +3,7 @@ import { getDb } from '../db';
 const model = {};
 
 export const get = model.get = (options) => {
-  const { query, sort, ipp, pg } = options;
+  const { query, sort, ipp } = options;
 
   let aggrPipeline = [{ $match: query }];
   if (!sort) {
@@ -21,7 +21,7 @@ export const get = model.get = (options) => {
 };
 
 export const search = model.search = (options) => {
-  const { query, sort, ipp, pg } = options;
+  const { query } = options;
   try {
     const db = getDb();
     const collection = db.collection('countries');

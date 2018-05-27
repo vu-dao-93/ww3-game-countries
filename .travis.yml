@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "8"
+script:
+  - npm run lint
+  - npm run build
+cache:
+  directories:
+    - "node_modules"
+notification:
+  email:
+    on_success: never
+    on_failure: always
