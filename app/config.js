@@ -6,7 +6,7 @@ config.express = {
 };
 
 config.mongodb = {
-  url: 'mongodb://admin:balm-G4-Mu01@ds159845.mlab.com:59845/ww3-game'
+  url: 'mongodb+srv://admin:balm-G4-Mu01@ww3-game.lr24r.mongodb.net/ww3-game?retryWrites=true&w=majority'
 };
 
 export default config;

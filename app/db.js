@@ -5,7 +5,8 @@ let db;
 
 export const init = async () => {
   try {
-    db = await MongoClient.connect(config.mongodb.url);
+    const client = await MongoClient.connect(config.mongodb.url);
+    db = client.db('ww3-game');
     console.log('Connected to db');
     return db;
   } catch (err) {
